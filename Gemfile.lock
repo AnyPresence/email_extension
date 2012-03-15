@@ -238,6 +238,7 @@ DEPENDENCIES
   rails (= 3.2.1)
   rspec-rails (~> 2.8.1)
   ruby-debug19
+  sass
   sass-rails (~> 3.2.3)
   simple_form
   twitter

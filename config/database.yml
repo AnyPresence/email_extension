@@ -16,9 +16,6 @@ development:
   adapter: postgresql
   encoding: unicode
   database: email_extension_development
-  pool: 5
-  username: email_extension
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -42,14 +39,10 @@ test:
   adapter: postgresql
   encoding: unicode
   database: email_extension_test
-  pool: 5
-  username: email_extension
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: email_extension_production
-  pool: 5
-  username: email_extension
-  password:
+
