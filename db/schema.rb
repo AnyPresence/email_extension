@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120315192311) do
+ActiveRecord::Schema.define(:version => 20120320164601) do
 
   create_table "anypresence_extension_accounts", :force => true do |t|
     t.string   "application_id"
@@ -28,9 +28,24 @@ ActiveRecord::Schema.define(:version => 20120315192311) do
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
     t.string   "extension_id"
+    t.string   "email_from"
   end
 
   add_index "anypresence_extension_accounts", ["application_id"], :name => "index_anypresence_extension_accounts_on_application_id", :unique => true
   add_index "anypresence_extension_accounts", ["authentication_token"], :name => "index_anypresence_extension_accounts_on_authentication_token", :unique => true
+
+  create_table "email_options", :force => true do |t|
+    t.string   "subject"
+    t.string   "to_address"
+    t.string   "body"
+    t.string   "from_address"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "notifiers", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

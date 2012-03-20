@@ -221,7 +221,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass!
   database_cleaner
-  devise
+  devise (~> 2.0)
   dynamic_form
   factory_girl
   factory_girl_rails (~> 1.2.0)

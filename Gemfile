@@ -6,11 +6,10 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'devise'
 gem 'faraday'
 gem 'multi_json'
 gem "compass", :git => "git://github.com/chriseppstein/compass.git"
-gem 'devise'
+gem 'devise', '~> 2.0'
 gem 'liquid'
 gem 'haml'
 gem 'hpricot'
@@ -40,7 +39,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem "rspec-rails", "~> 2.8.1"
   gem "factory_girl_rails", "~> 1.2.0", :require => false
-  gem 'local-env'
+  gem 'local-env' 
   gem 'ruby-debug19'
 end
 

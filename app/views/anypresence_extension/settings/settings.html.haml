@@ -1,0 +1,19 @@
+%h4
+  = flash[:notice]
+  = flash[:alert]
+  
+#email_configuration
+  = simple_form_for(current_account, :url => settings_path) do |f|
+    = f.error_messages
+    %br
+    %p
+      API version: #{current_account.api_version}
+    %br
+    %br
+    %div.yui3-g
+      %div.yui3-u-1-4
+        = f.label :email_from
+        = f.text_field :email_from
+      %div.yui3-u-1-4
+        
+    = f.button :submit, "Update Account"
