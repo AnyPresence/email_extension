@@ -15,5 +15,9 @@
         = f.label :email_from
         = f.text_field :email_from
       %div.yui3-u-1-4
+        = f.label :api_host
+        = f.text_field :api_host
         
+    = link_to "Setup email options", main_app.account_email_options_path(current_account)
+    %br    
     = f.button :submit, "Update Account"

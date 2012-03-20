@@ -6,6 +6,8 @@ module AnypresenceExtension
     
     attr_accessible :email_from
   
+    has_many :email_options, :dependent => :destroy
+    
     def get_fields
       field_names = []
       res = ap_client.metadata.fetch.to_json

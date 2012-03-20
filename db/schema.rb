@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120320164601) do
+ActiveRecord::Schema.define(:version => 20120320172358) do
 
   create_table "anypresence_extension_accounts", :force => true do |t|
     t.string   "application_id"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20120320164601) do
     t.string   "from_address"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "name"
+    t.integer  "account_id"
   end
 
   create_table "notifiers", :force => true do |t|
