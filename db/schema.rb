@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120320172358) do
+ActiveRecord::Schema.define(:version => 20120321223644) do
 
   create_table "anypresence_extension_accounts", :force => true do |t|
     t.string   "application_id"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(:version => 20120320172358) do
 
   add_index "anypresence_extension_accounts", ["application_id"], :name => "index_anypresence_extension_accounts_on_application_id", :unique => true
   add_index "anypresence_extension_accounts", ["authentication_token"], :name => "index_anypresence_extension_accounts_on_authentication_token", :unique => true
+
+  create_table "consume_email_options", :force => true do |t|
+    t.string   "name"
+    t.string   "body_map"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "account_id"
+  end
 
   create_table "email_options", :force => true do |t|
     t.string   "subject"

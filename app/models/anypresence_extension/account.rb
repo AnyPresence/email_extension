@@ -7,6 +7,7 @@ module AnypresenceExtension
     attr_accessible :email_from
   
     has_many :email_options, :dependent => :destroy
+    has_many :consume_email_options, :dependent => :destroy
     
     def get_fields
       field_names = []
@@ -21,6 +22,16 @@ module AnypresenceExtension
         end
       end
       field_names
+    end
+    
+    # Finds the object definition name.
+    def find_object_name(text)
+      text.strip
+    end
+    
+    def create_object_instance(consume_email_option, data)
+      ap_client.data(consume_email_option.name)
+      ap_client.create({:object_instance =>{consume_email_option.body_map => data}})
     end
   end
 end

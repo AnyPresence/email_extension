@@ -1,0 +1,8 @@
+= link_to "Go back to settings", settings_path
+%br
+%br
+- @consume_email_options.each do |option|
+  = link_to "#{option.name}", [current_account, option]
+  %br
+%br
+= link_to "Add new consume email option", new_account_consume_email_option_path(@account)

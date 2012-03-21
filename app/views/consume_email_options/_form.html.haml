@@ -1,0 +1,15 @@
+= simple_form_for [current_account, option] do |f|
+  = f.error_messages
+  %div.yui3-g
+  = f.label :name
+  = f.select :name, @available_objects, {}, {:class => 'select-menu'}
+  %br
+  %br
+  %div.yui3-g
+    %div.yui3-u-1-4
+      = f.label :body_map
+      = f.text_field :body_map
+  %div.yui3-g
+  %br
+  %br
+  = f.button :submit, "Submit!"

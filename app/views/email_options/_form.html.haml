@@ -1,14 +1,23 @@
 = simple_form_for [current_account, option] do |f|
   = f.error_messages
+  %div.yui3-g
   = f.label :name
   = f.select :name, @available_objects, {}, {:class => 'select-menu'}
   %br
-  
-  = f.label :to_address
-  = f.text_field :to_address, :size => 150
+  %br
+  %div.yui3-g
+    %div.yui3-u-1-4
+      = f.label :to_address
+      = f.text_field :to_address
+    
   = f.label :subject
-  = f.text_field :subject, :size => 150
+  = f.text_field :subject
+  %br
+  %br
   = f.label :body
-  = f.text_field :body, :size => 150
+  %br
+  = f.text_field :body, :size => 80
+  %div.yui3-g
+  %br
   %br
   = f.button :submit, "Submit!"

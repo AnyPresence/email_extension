@@ -12,12 +12,19 @@
     %br
     %div.yui3-g
       %div.yui3-u-1-4
-        = f.label :email_from
+        = f.label :email_from, "From address"
         = f.text_field :email_from
+        %br
+        %br
+    %div.yui3-g
       %div.yui3-u-1-4
         = f.label :api_host
         = f.text_field :api_host
+        %br
+        %br
         
     = link_to "Setup email options", main_app.account_email_options_path(current_account)
+    %br
+    = link_to "Setup consume email options", main_app.account_consume_email_options_path(current_account)
     %br    
     = f.button :submit, "Update Account"
