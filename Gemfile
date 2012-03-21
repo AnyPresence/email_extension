@@ -36,6 +36,10 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem 'heroku-rails', :git => 'git://github.com/sid137/heroku-rails.git'
+end
+
 group :test, :development do
   gem "rspec-rails", "~> 2.8.1"
   gem "factory_girl_rails", "~> 1.2.0", :require => false
