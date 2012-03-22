@@ -5,11 +5,10 @@
   = f.select :name, @available_objects, {}, {:class => 'select-menu'}
   %br
   %br
-  %div.yui3-g
-    %div.yui3-u-1-4
-      = f.label :to_address
-      = f.text_field :to_address
-    
+
+  = f.label :to_address
+  = f.text_field :to_address
+  
   = f.label :subject
   = f.text_field :subject
   %br

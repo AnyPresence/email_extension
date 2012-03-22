@@ -17,10 +17,10 @@ class ConsumeEmailOptionsController < ApplicationController
     @consume_email_option = current_account.consume_email_options.build(params[:consume_email_option])
     
     if @consume_email_option.save
-      flash[:notice] = "Email option has been created."
+      flash[:notice] = "Consume email option has been created."
       redirect_to [current_account, @consume_email_option]
     else
-      flash[:alert] = "Email option has not been created."
+      flash[:alert] = "Consume email option has not been created."
       render "new"
     end
   end
@@ -32,10 +32,10 @@ class ConsumeEmailOptionsController < ApplicationController
   def update
     @consume_email_option =  EmailOption.find(params[:id])
     if @consume_email_option.update_attributes(params[:consume_email_option])
-      flash[:notice] = "Email option has been updated."
+      flash[:notice] = "Consume email option has been updated."
       redirect_to [current_account, @consume_email_option]
     else
-      flash[:alert] = "Email option has not been updated."
+      flash[:alert] = "Consume email option has not been updated."
       render :action => "edit"
     end
   end
@@ -47,7 +47,7 @@ class ConsumeEmailOptionsController < ApplicationController
   def destroy
     @consume_email_option = current_account.consume_email_options.find(params[:id])
     @consume_email_option.destroy
-    flash[:notice] = "Email option has been deleted."
+    flash[:notice] = "Consume email option has been deleted."
     redirect_to settings_path
   end
 end

@@ -12,7 +12,7 @@ protected
           redirect_to settings_path
         end
       rescue
-        flash[:alert] = "Unable to retrieve object names for building a menu."
+        flash[:alert] = "Unable to retrieve object names for building a menu. Please publish the application."
         redirect_to settings_path
       end
     end

@@ -8,8 +8,8 @@ EmailExtension::Application.routes.draw do
   anypresence_extension_lifecycle_triggered_action "settings#perform"
   
   resources :accounts do
-    resources :email_options
-    resources :consume_email_options
+    resources :email_options, :controller => "email_options"
+    resources :consume_email_options, :controller => "consume_email_options"
   end
   
   mount AnypresenceExtension::Engine => "/"
