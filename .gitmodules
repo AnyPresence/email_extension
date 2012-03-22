@@ -1,3 +1,0 @@
-[submodule "lib/shared"]
-	path = lib/shared
-	url = git@github.com:AnyPresence/anypresence_extensions_shared_logic.git
