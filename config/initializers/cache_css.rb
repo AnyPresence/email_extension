@@ -9,7 +9,14 @@ unless Rails.env.test?
     until done_redirecting
       host, port = url.host, url.port if url.host && url.port
       req = Net::HTTP::Get.new(url.path)
-      response = Net::HTTP.start(host, port) {|http|  http.request(req) }
+      response = Net::HTTP.start(host, port) do |http|
+        if url.scheme == "https"
+          #http.use_ssl = true
+        	# This is temporary
+      	  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        end
+        http.request(req)
+      end
       response.header['location'] ? url = URI.parse(response.header['location']) :
       done_redirecting = true
     end
