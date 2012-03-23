@@ -17,8 +17,11 @@ unless Rails.env.test?
         end
         http.request(req)
       end
-      response.header['location'] ? url = URI.parse(response.header['location']) :
-      done_redirecting = true
+      if response.header['location']
+        url = URI.parse(response.header['location'])
+      else
+        done_redirecting = true
+      end
     end
 
     doc = Hpricot(response.body)
