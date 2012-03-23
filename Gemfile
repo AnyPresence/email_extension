@@ -19,6 +19,7 @@ gem "omniauth"
 gem "omniauth-twitter"
 gem "twitter"
 gem 'anypresence_extension', '0.0.1', :path => 'vendor/gems/anypresence_extension-0.0.1'
+gem 'anypresence_extensions_shared_logic', '0.0.1', :path => 'vendor/gems/anypresence_extensions_shared_logic-0.0.1'
 gem "sass"
 
 

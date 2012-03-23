@@ -19,6 +19,11 @@ PATH
   specs:
     anypresence_extension (0.0.1)
 
+PATH
+  remote: vendor/gems/anypresence_extensions_shared_logic-0.0.1
+  specs:
+    anypresence_extensions_shared_logic (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -234,6 +239,7 @@ PLATFORMS
 
 DEPENDENCIES
   anypresence_extension (= 0.0.1)!
+  anypresence_extensions_shared_logic (= 0.0.1)!
   capybara
   coffee-rails (~> 3.2.1)
   compass!
