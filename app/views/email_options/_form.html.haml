@@ -2,20 +2,24 @@
   = f.error_messages
   %div.yui3-g
   = f.label :name
+  %br
   = f.select :name, @available_objects, {}, {:class => 'select-menu'}
   %br
   %br
 
   = f.label :to_address
+  %br
   = f.text_field :to_address
   
   = f.label :subject
+  %br
   = f.text_field :subject
   %br
   %br
   = f.label :body
   %br
   = f.text_field :body, :size => 80
+  %br
   %div.yui3-g
   %br
   %br
