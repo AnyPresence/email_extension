@@ -1,7 +1,7 @@
 %h4
   = flash[:notice]
   = flash[:alert]
-  
+
 #email_configuration
   = simple_form_for(current_account, :url => settings_path) do |f|
     = f.error_messages
@@ -25,3 +25,5 @@
     = link_to "Setup consume email options", main_app.account_consume_email_options_path(current_account)
     %br    
     = f.button :submit, "Update Account"
+%br
+%br
