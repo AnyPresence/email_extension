@@ -1,17 +1,16 @@
 = simple_form_for [current_account, option] do |f|
   = f.error_messages
   %div.yui3-g
-  = f.label :name
-  %br
-  = f.select :name, @available_objects, {}, {:class => 'select-menu'}
-  %br
-  %br
-
-  = f.label :body_map, "Field on object to map to Body"
-  %br
-  = f.text_field :body_map
-  
+    %div.yui3-u-1-4
+      = f.label :name
+      %br
+      = f.select :name, @available_objects
+      %br
+      %br
+      %br
+      = f.label :body_map, "Field on object to map to the body of the email"
+      %br
+      = f.text_field :body_map
   %div.yui3-g
-  %br
-  %br
-  = f.button :submit, "Submit!"
+    %div.yui3-u-1-4
+      = f.button :submit, "Submit!"
