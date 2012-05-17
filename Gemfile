@@ -1,57 +1,17 @@
-source 'https://rubygems.org'
+source "http://rubygems.org"
 
-gem 'rails', '3.2.1'
+# Declare your gem's dependencies in email_extension.gemspec.
+# Bundler will treat runtime dependencies like base dependencies, and
+# development dependencies will be added by default to the :development group.
+gemspec
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# jquery-rails is used by the dummy application
+gem "jquery-rails"
 
-gem 'pg'
-gem 'faraday'
-gem 'multi_json'
-gem "compass", :git => "git://github.com/chriseppstein/compass.git"
-gem 'devise', '~> 2.0'
-gem 'liquid'
-gem 'haml'
-gem 'hpricot'
-gem 'dynamic_form'
-gem "simple_form"
-gem "omniauth"
-gem "omniauth-twitter"
-gem "twitter"
-gem 'anypresence_extension', '0.0.1', :path => 'vendor/gems/anypresence_extension-0.0.1'
-gem 'anypresence_extensions_shared_logic', '0.0.1', :path => 'vendor/gems/anypresence_extensions_shared_logic-0.0.1'
-gem "sass"
+# Declare any dependencies that are still in development here instead of in
+# your gemspec. These might include edge Rails or gems from your path or
+# Git. Remember to move these dependencies to your gemspec before releasing
+# your gem to rubygems.org.
 
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
-end
-
-gem 'jquery-rails'
-
-group :development do
-  gem 'heroku-rails', :git => 'git://github.com/sid137/heroku-rails.git'
-end
-
-group :test, :development do
-  gem "rspec-rails", "~> 2.8.1"
-  gem "factory_girl_rails", "~> 1.2.0", :require => false
-  gem 'local-env' 
-  gem 'ruby-debug19'
-end
-
-group :test do
-  gem 'factory_girl'
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'webmock'
-  gem 'vcr'
-end
+# To use debugger
+# gem 'ruby-debug19', :require => 'ruby-debug'
