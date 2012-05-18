@@ -1,0 +1,11 @@
+development:
+  host: localhost
+  database: email_extension_development
+
+test:
+  host: localhost
+  database: email_extension_test
+
+production:
+  host: localhost
+  database: email_extension_production
