@@ -1,9 +1,0 @@
-= link_to "Go back to settings", settings_path
-%br
-%br
-#consume_email_option
-  = @consume_email_option.name
-  \- #{@consume_email_option.body_map}
-%br
-= link_to "Edit", edit_account_email_option_path(current_account, @consume_email_option)
-= link_to "Delete", [current_account, @consume_email_option], :method => :delete, :confirm => "Are you sure you want to delete this consume email option?"
