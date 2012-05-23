@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe SettingsController do
+describe EmailExtension::SettingsController do
 
 end

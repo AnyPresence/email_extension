@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe ConsumeEmailOption do
+describe  EmailExtension::ConsumeEmailOption do
   pending "add some examples to (or delete) #{__FILE__}"
 end

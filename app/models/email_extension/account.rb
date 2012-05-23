@@ -1,9 +1,8 @@
-require AnypresenceExtension::Engine.root.join('app', 'models', 'anypresence_extension', 'account')
+module EmailExtension 
+  class Account
+    include Mongoid::Document
+    include Mongoid::Timestamps
 
-module AnypresenceExtension 
-  class Account < ActiveRecord::Base
-    include AnypresenceExtension::Common::AnypresenceClient
-    
     attr_accessible :email_from
   
     has_many :email_options, :dependent => :destroy
