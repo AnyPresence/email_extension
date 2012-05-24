@@ -67,19 +67,33 @@ describe OutagesController do
 
   describe "POST create" do
     describe "with valid params" do
+      before(:each) do
+        @account = FactoryGirl.create(:email_extension_account)
+        @notifier = double('notifier')
+      end
+      
       it "creates a new Outage" do
+        ::EmailExtension::Notifier.should_receive(:send_email).with(any_args()).and_return(@notifier)
+        @notifier.should_receive(:deliver).and_return(true)
+        
         expect {
           post :create, {:outage => valid_attributes}, valid_session
         }.to change(Outage, :count).by(1)
       end
 
       it "assigns a newly created outage as @outage" do
+        ::EmailExtension::Notifier.should_receive(:send_email).with(any_args()).and_return(@notifier)
+        @notifier.should_receive(:deliver).and_return(true)
+         
         post :create, {:outage => valid_attributes}, valid_session
         assigns(:outage).should be_a(Outage)
         assigns(:outage).should be_persisted
       end
 
       it "redirects to the created outage" do
+        ::EmailExtension::Notifier.should_receive(:send_email).with(any_args()).and_return(@notifier)
+        @notifier.should_receive(:deliver).and_return(true)
+        
         post :create, {:outage => valid_attributes}, valid_session
         response.should redirect_to(Outage.last)
       end
@@ -104,7 +118,11 @@ describe OutagesController do
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested outage" do
+      before(:each) do
+        @account = FactoryGirl.create(:email_extension_account)
+      end
+      
+      it "updates the requested outage" do             
         outage = Outage.create! valid_attributes
         # Assuming there are no other outages in the database, this
         # specifies that the Outage created on the previous line

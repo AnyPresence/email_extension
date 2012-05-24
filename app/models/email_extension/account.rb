@@ -3,12 +3,12 @@ module EmailExtension
     include Mongoid::Document
     include Mongoid::Timestamps
 
-    field :to, type: String
-    field :from, type: String
+    field :to_address, type: String
+    field :from_address, type: String
     field :subject, type: String
     field :outgoing_message_format, type: String
     
-    attr_accessible :to, :from, :subject, :outgoing_message_format
+    attr_accessible :to_address, :from_address, :subject, :outgoing_message_format
   
   end
 end

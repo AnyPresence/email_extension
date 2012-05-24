@@ -29,8 +29,8 @@ module AP
          options[:from] ||= account.from_address
          options[:subject] ||= account.subject
          options[:outgoing_message_format] ||= account.outgoing_message_format
-          
-         ::EmailExtension::Notifier.send_email(options[:from], options[:to], options[:subject],  options[:outgoing_message_format]).deliver
+         
+         ::EmailExtension::Notifier.send_email(options[:from], options[:to], options[:subject], options[:outgoing_message_format]).deliver
        end
     end
   end
