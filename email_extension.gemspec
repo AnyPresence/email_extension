@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
     s.add_development_dependency "multi_json"
     s.add_development_dependency "rspec"
     s.add_development_dependency "rspec-rails"
-    s.add_development_dependency "mongoid", "2.4.4"
+    s.add_dependency "mongoid", ">= 2.4.4"
     s.add_development_dependency "devise"
     s.add_development_dependency "twilio-ruby"
     s.add_development_dependency "liquid"
