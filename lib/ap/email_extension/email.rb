@@ -5,6 +5,10 @@ module AP
          if config.empty?
            raise "Nothing to configure!"
          end
+         # Override the twilio account setting if these environment variables are set.
+         config[:sendgrid_username] = ENV['EMAIL_EXTENSION_SENDGRID_USERNAME'] unless ENV['EMAIL_EXTENSION_SENDGRID_USERNAME'].nil?
+         config[:sendgrid_password] = ENV['EMAIL_EXTENSION_SENDGRID_PASSWORD'] unless ENV['EMAIL_EXTENSION_SENDGRID_PASSWORD'].nil?
+         
          account = nil
          if !::EmailExtension::Account.all.blank?
            account = ::EmailExtension::Account.first

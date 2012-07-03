@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     email_extension (0.0.1)
+      mongoid (>= 2.4.4)
       rails (~> 3.2.2)
 
 GEM
