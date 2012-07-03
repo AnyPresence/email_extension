@@ -1,3 +1,5 @@
+require "liquid"
+
 module EmailExtension
   module Common
     module LiquidTemplate
@@ -32,13 +34,13 @@ module EmailExtension
         klass = Class.new(Liquid::Drop) do
           define_method(:initialize) do |arg|
             arg.each do |k,v|
-              formatted_field = AnypresenceExtension::Common::LiquidTemplate::code_friendify(k)
+              formatted_field = ::EmailExtension::Common::LiquidTemplate.code_friendify(k)
               instance_variable_set("@#{formatted_field}", v)
             end
           end
     
           fields.each do |field|
-            formatted_field = AnypresenceExtension::Common::LiquidTemplate::code_friendify(field)
+            formatted_field = ::EmailExtension::Common::LiquidTemplate.code_friendify(field)
             define_method("#{formatted_field}=") do |arg|
               instance_variable_set("@#{formatted_field}", arg)
             end
