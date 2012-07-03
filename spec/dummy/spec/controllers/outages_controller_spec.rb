@@ -134,11 +134,14 @@ describe OutagesController do
 
       it "assigns the requested outage as @outage" do
         outage = Outage.create! valid_attributes
+        #::EmailExtension::Notifier.stub(:send_email).with(any_args()).stub(:deliver)
+        ::EmailExtension::Notifier.stub_chain(:send_email, :deliver)
         put :update, {:id => outage.to_param, :outage => valid_attributes}, valid_session
         assigns(:outage).should eq(outage)
       end
 
       it "redirects to the outage" do
+        ::EmailExtension::Notifier.stub_chain(:send_email, :deliver).and_return(true)
         outage = Outage.create! valid_attributes
         put :update, {:id => outage.to_param, :outage => valid_attributes}, valid_session
         response.should redirect_to(outage)
