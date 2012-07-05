@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     s.add_dependency "local-env"
     s.add_dependency "faraday"
     s.add_dependency "haml"
+    s.add_dependency "mime-types"
     s.add_dependency "hpricot"
     s.add_dependency "dynamic_form"
     s.add_dependency "simple_form"
