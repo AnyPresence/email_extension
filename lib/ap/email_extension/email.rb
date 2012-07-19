@@ -5,6 +5,8 @@ module AP
          if config.empty?
            raise "Nothing to configure!"
          end
+         config = HashWithIndifferentAccess.new(config)
+         
          # Override the twilio account setting if these environment variables are set.
          config[:sendgrid_username] = ENV['EMAIL_EXTENSION_SENDGRID_USERNAME'] unless ENV['EMAIL_EXTENSION_SENDGRID_USERNAME'].nil?
          config[:sendgrid_password] = ENV['EMAIL_EXTENSION_SENDGRID_PASSWORD'] unless ENV['EMAIL_EXTENSION_SENDGRID_PASSWORD'].nil?
@@ -29,12 +31,13 @@ module AP
        
        def email_perform(object_instance, options={})
          account = ::EmailExtension::Account.first
-         options[:to] ||= account.to_address
-         options[:from] ||= account.from_address
+         options = HashWithIndifferentAccess.new(options)
+         options[:to_address] ||= account.to_address
+         options[:from_address] ||= account.from_address
          options[:subject] ||= account.subject
          options[:outgoing_message_format] ||= account.outgoing_message_format
          
-         ::EmailExtension::Notifier.send_email(object_instance.attributes, object_instance.class.name, options[:from], options[:to], options[:subject], options[:outgoing_message_format]).deliver
+         ::EmailExtension::Notifier.send_email(object_instance.attributes, object_instance.class.name, options[:from_address], options[:to_address], options[:subject], options[:outgoing_message_format]).deliver
        end
     end
   end

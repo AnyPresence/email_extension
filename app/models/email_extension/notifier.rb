@@ -14,7 +14,11 @@ module EmailExtension
       ActionMailer::Base.delivery_method = :smtp
       
       formatted_body = ::EmailExtension::Common::LiquidTemplate.parse_format_string(body, object_name, params)
-      mail(:from => from_address, :to => to_address, :subject => subject, :body => formatted_body)
+      formatted_from_address = ::EmailExtension::Common::LiquidTemplate.parse_format_string(from_address, object_name, params)
+      formatted_to_address = ::EmailExtension::Common::LiquidTemplate.parse_format_string(to_address, object_name, params)
+      formatted_subject = ::EmailExtension::Common::LiquidTemplate.parse_format_string(subject, object_name, params)
+      
+      mail(:from => formatted_from_address, :to => formatted_to_address, :subject => formatted_subject, :body => formatted_body)
     end
     
   end
