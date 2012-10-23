@@ -1,11 +1,32 @@
 development:
-  host: localhost
-  database: email_extension_development
+  # Configure available database sessions. (required)
+  sessions:
+    # Defines the default session. (required)
+    default:
+      # Defines the name of the default database that Mongoid can connect to.
+      # (required).
+      database: email_extension_development
+      # Provides the hosts the default session can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - localhost:27017
+      options:
+        # Change whether the session persists in safe mode by default.
+        # (default: false)
+        # safe: false
+
+        # Change the default consistency model to :eventual or :strong.
+        # :eventual will send reads to secondaries, :strong sends everything
+        # to master. (default: :eventual)
+        consistency: :strong
+  # Configure Mongoid specific options. (optional)
+  options:
 
 test:
-  host: localhost
-  database: email_extension_test
-
-production:
-  host: localhost
-  database: email_extension_production
+  sessions:
+    default:
+      database: email_extension_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
