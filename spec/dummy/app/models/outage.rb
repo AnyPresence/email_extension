@@ -4,8 +4,6 @@ class Outage
   include AP::EmailExtension::Email
   
   # Field definitions
-  
-  field :"_id", as: :id, type: String
 
   field :"title", type: String
 
