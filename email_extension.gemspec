@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.name        = "email_extension"
   s.version     = EmailExtension::VERSION
   s.authors     = ["Anypresence"]
-  s.email       = ["fake@fake.local"]
-  s.homepage    = ""
+  s.email       = ["info@anypresence.com"]
+  s.homepage    = "http://www.anypresence.com/"
   s.summary     = ""
-  s.description = ""
+  s.description = "Email integration for apps generated using AnyPresence's solution."
 
     s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 

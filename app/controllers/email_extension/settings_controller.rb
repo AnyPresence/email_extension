@@ -1,5 +1,5 @@
 module EmailExtension
-  class SettingsController < ApplicationController
+  class SettingsController < ::EmailExtension::ApplicationController
     layout 'application'
   
   end
