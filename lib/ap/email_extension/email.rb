@@ -29,6 +29,9 @@ module AP
          end
        end
        
+       # Builds text message to send out.
+       #  +object_instance+ is the object instance
+       #  +options+ is a hash that includes: +:from_address+, from address; +:to_address+, to address; +:subject+, email subject; +:outgoing_message_format+, outgoing message
        def email_perform(object_instance, options={})
          account = ::EmailExtension::Account.first
          options = HashWithIndifferentAccess.new(options)
