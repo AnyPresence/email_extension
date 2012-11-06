@@ -26,7 +26,7 @@ module EmailExtension
       # TODO: needs to be smarter. We're taking the 'name' attribute of the field definitions which can
       # contain spaces and other characters that are not valid for variable names.
       def self.code_friendify(str)
-        str.gsub(' ', '')
+        str.to_s.gsub(' ', '')
       end
       
       # Builds a liquid drop class from the object_name
