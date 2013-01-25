@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %title EmailExtension
+    = stylesheet_link_tag    "email_extension/application", :media => "all"
+    = javascript_include_tag "email_extension/application"
+    = stylesheet_link_tag 'admin'
+    = csrf_meta_tags
+  %body
+    = yield

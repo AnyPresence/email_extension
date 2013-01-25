@@ -35,6 +35,6 @@ Gem::Specification.new do |s|
     s.add_development_dependency "factory_girl", "= 3.3.0"
     s.add_development_dependency "webmock"
     s.add_development_dependency "vcr"
-    s.add_development_dependency "ruby-debug19"
+    s.add_development_dependency "debugger"
     
   end
