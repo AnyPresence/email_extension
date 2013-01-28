@@ -18,8 +18,9 @@ module EmailExtension
       formatted_to_address = ::EmailExtension::Common::LiquidTemplate.parse_format_string(to_address, object_name, params)
       formatted_subject = ::EmailExtension::Common::LiquidTemplate.parse_format_string(subject, object_name, params)
       
-      ::EmailExtension::Message.create(:from => formatted_from_address, :to => formatted_to_address, :subject => formatted_subject, :body => formatted_body)
-      mail(:from => formatted_from_address, :to => formatted_to_address, :subject => formatted_subject, :body => formatted_body)
+      message = mail(from: formatted_from_address, to: formatted_to_address, subject: formatted_subject, body: formatted_body)
+      ::EmailExtension::Message.create(from: formatted_from_address, to: formatted_to_address, subject: formatted_subject, body: formatted_body)
+      message
     end
     
   end
