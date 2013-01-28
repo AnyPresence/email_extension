@@ -4,7 +4,7 @@ describe "Outages" do
   describe "GET /outages" do
     it "works! (now write some real specs)" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get outages_path
+      get api_v1_outages_path
       response.status.should be(200)
     end
   end

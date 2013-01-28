@@ -3,5 +3,9 @@ module EmailExtension
   class SettingsController < ApplicationController
     before_filter :authenticate_admin!
   
+    def index
+      @messages = ::EmailExtension::Message.all.page(params[:page])
+    end
+    
   end
 end

@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe "outages/index" do
+describe "api/v1/outages/index" do
   before(:each) do
     assign(:outages, [
-      stub_model(Outage),
-      stub_model(Outage)
+      stub_model(Api::V1::Outage),
+      stub_model(Api::V1::Outage)
     ])
   end
 

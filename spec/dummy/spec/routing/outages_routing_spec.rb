@@ -1,34 +1,34 @@
 require "spec_helper"
 
-describe OutagesController do
+describe Api::V1::OutagesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/outages").should route_to("outages#index")
+      get("/api/v1/outages").should route_to("api/v1/outages#index")
     end
 
     it "routes to #new" do
-      get("/outages/new").should route_to("outages#new")
+      get("/api/v1/outages/new").should route_to("api/v1/outages#new")
     end
 
     it "routes to #show" do
-      get("/outages/1").should route_to("outages#show", :id => "1")
+      get("/api/v1/outages/1").should route_to("api/v1/outages#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/outages/1/edit").should route_to("outages#edit", :id => "1")
+      get("/api/v1/outages/1/edit").should route_to("api/v1/outages#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/outages").should route_to("outages#create")
+      post("/api/v1/outages").should route_to("api/v1/outages#create")
     end
 
     it "routes to #update" do
-      put("/outages/1").should route_to("outages#update", :id => "1")
+      put("/api/v1/outages/1").should route_to("api/v1/outages#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/outages/1").should route_to("outages#destroy", :id => "1")
+      delete("/api/v1/outages/1").should route_to("api/v1/outages#destroy", :id => "1")
     end
 
   end

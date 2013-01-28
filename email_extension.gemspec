@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = ""
   s.description = "Email integration for apps generated using AnyPresence's solution."
 
-    s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+    s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc", "manifest.json"]
 
     s.add_dependency "rails", "~> 3.2.8"
     s.add_dependency "json"
@@ -29,6 +29,8 @@ Gem::Specification.new do |s|
     s.add_dependency "hpricot"
     s.add_dependency "dynamic_form"
     s.add_dependency "simple_form"
+    s.add_dependency "kaminari", '~> 0.14.1'
+    
     s.add_development_dependency "rspec"
     s.add_development_dependency "rspec-rails"
     s.add_development_dependency "database_cleaner"

@@ -42,6 +42,10 @@ module AP
          
          ::EmailExtension::Notifier.send_email(object_instance.attributes, object_instance.class.name, options[:from_address], options[:to_address], options[:subject], options[:outgoing_message_format]).deliver
        end
+       
+       def self.json_config
+         @@json ||= ActiveSupport::JSON.decode(File.read("#{File.dirname(__FILE__)}/../../../manifest.json"))
+       end
     end
   end
 end

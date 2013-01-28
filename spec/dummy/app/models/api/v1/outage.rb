@@ -1,4 +1,4 @@
-class Outage
+class Api::V1::Outage
   include Mongoid::Document
   include Mongoid::Timestamps
   include AP::EmailExtension::Email

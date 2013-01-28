@@ -8,6 +8,7 @@ PATH
       haml
       hpricot
       json
+      kaminari (~> 0.14.1)
       liquid
       local-env
       mime-types
@@ -103,6 +104,9 @@ GEM
     json (1.7.5)
     jwt (0.1.5)
       multi_json (>= 1.0)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.3.10.4)
     liquid (2.4.1)
     local-env (0.0.1)
@@ -224,6 +228,7 @@ DEPENDENCIES
   haml (= 3.1.7)
   jquery-rails
   jquery_mobile_rails (= 1.2.0)
+  kaminari (~> 0.14.1)
   mongoid (~> 3.0.6)
   redis
   resque

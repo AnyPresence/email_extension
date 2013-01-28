@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "outages/show" do
+describe "api/v1/outages/show" do
   before(:each) do
-    @outage = assign(:outage, stub_model(Outage))
+    @outage = assign(:outage, stub_model(Api::V1::Outage))
   end
 
   it "renders attributes in <p>" do

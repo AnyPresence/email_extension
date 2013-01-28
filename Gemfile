@@ -19,6 +19,7 @@ gem 'simple_form', '2.0.4'
 gem 'sass-rails', '3.2.5'
 gem 'compass-rails', '1.0.3'
 gem 'actionpack', '~> 3.2.8'
+gem 'kaminari', '~> 0.14.1'
 
 
 group :assets do
