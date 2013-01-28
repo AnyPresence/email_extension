@@ -9,6 +9,8 @@ module EmailExtension
       #   If the attributes for a particular outage object are: title => "Widespread Outage", description => "Around D.C. area."
       #   Then the rendered text should be "Outage: Widespread Outage : Around D.C. area".
       def self.parse_format_string(format, object_name, decoded_json)
+        return format if object_name.blank? || decoded_json.blank?
+        
         klass = self.build_liquid_drop_class(object_name, decoded_json.keys)
         # Set instance variables for klass from decoded json
         klass_instance = klass.new(decoded_json)

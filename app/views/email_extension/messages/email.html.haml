@@ -1,0 +1,11 @@
+%h1 Send email
+= simple_form_for(@message) do |f|
+  = f.error :base
+  = f.error_notification
+  = f.input :from
+  = f.input :to
+  = f.input :subject
+  = f.input :body, :as => :text
+  %br
+  = f.button :submit, "Send"
+

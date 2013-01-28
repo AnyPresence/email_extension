@@ -3,6 +3,7 @@
 .container
   %br
   = link_to "Send Email", email_path
+  %br
   = paginate @messages
   %table
     %tbody
@@ -10,12 +11,14 @@
         %th time
         %th from
         %th to
+        %th subject
         %th message
         - @messages.each do |message|
           %tr
             %td= message.updated_at
             %td= message.from
             %td= message.to
+            %td= message.subject
             %td= message.body
 
 
