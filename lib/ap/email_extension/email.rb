@@ -5,8 +5,8 @@ module AP
          config = HashWithIndifferentAccess.new(config)
          
          # Override the twilio account setting if these environment variables are set.
-         config[:sendgrid_username] = ENV['EMAIL_EXTENSION_SENDGRID_USERNAME'] unless ENV['EMAIL_EXTENSION_SENDGRID_USERNAME'].blank?
-         config[:sendgrid_password] = ENV['EMAIL_EXTENSION_SENDGRID_PASSWORD'] unless ENV['EMAIL_EXTENSION_SENDGRID_PASSWORD'].blank?
+         config[:sendgrid_username] = ENV['AP_EMAIL_NOTIFIER_SENDGRID_USERNAME'] unless ENV['AP_EMAIL_NOTIFIER_SENDGRID_USERNAME'].blank?
+         config[:sendgrid_password] = ENV['AP_EMAIL_NOTIFIER_SENDGRID_PASSWORD'] unless ENV['AP_EMAIL_NOTIFIER_SENDGRID_PASSWORD'].blank?
          
          account = nil
          if !::EmailExtension::Account.all.blank?
