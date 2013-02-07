@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    email_extension (0.0.3)
+    email_extension (0.0.4)
       devise
       dynamic_form
       faraday

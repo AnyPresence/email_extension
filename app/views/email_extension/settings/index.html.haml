@@ -1,25 +1,27 @@
-%h1 Email Extension Settings
-%h1 Messages
-.container
-  %br
-  = link_to "Send Email", new_message_path
-  %br
+.alert.alert-info
+  %h1 Email Extension Settings
+  %h1 Messages
+
+%br
+
+%h3= link_to "Send Email", new_message_path
+.ap-text-center
   = paginate @messages
-  %table
-    %tbody
-      %tr 
-        %th time
-        %th from
-        %th to
-        %th subject
-        %th message
-        - @messages.each do |message|
-          %tr
-            %td= message.updated_at
-            %td= message.from
-            %td= message.to
-            %td= message.subject
-            %td= message.body
+%table.table.table-striped
+  %tbody
+    %tr 
+      %th time
+      %th from
+      %th to
+      %th subject
+      %th message
+      - @messages.each do |message|
+        %tr
+          %td= message.updated_at
+          %td= message.from
+          %td= message.to
+          %td= message.subject
+          %td= message.body
 
 
 

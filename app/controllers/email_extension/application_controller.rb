@@ -1,5 +1,4 @@
-module EmailExtension
-  class ApplicationController < ActionController::Base
+class EmailExtension::ApplicationController < ApplicationController
+    layout "layouts/admin"
     protect_from_forgery
-  end
 end
