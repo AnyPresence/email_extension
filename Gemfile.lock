@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    email_extension (0.0.4)
+    email_extension (0.0.5)
       devise
       dynamic_form
       faraday
@@ -76,7 +76,7 @@ GEM
     debugger-linecache (1.1.2)
       debugger-ruby_core_source (>= 1.1.1)
     debugger-ruby_core_source (1.1.6)
-    devise (2.1.2)
+    devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
