@@ -1,16 +1,26 @@
+%ul.breadcrumb
+  %li
+    = link_to 'Home', main_app.admin_root_path
+    %span.divider /
+  %li
+    = link_to 'Extensions', main_app.admin_extensions_path
+    %span.divider /
+  %li
+    = link_to 'Email Notifier', settings_path
+    %span.divider /
+  %li Send Email
 
-.text-info
-  %h3 Send email
+.page-header
+  %h1 Send Email
 
-.container
-  = simple_form_for(@message, :html => {class: 'form-horizontal'}) do |f|
-    .form-inputs
-      = f.error :base
-      = f.error_notification
-      = f.input :from
-      = f.input :to
-      = f.input :subject
-      = f.input :body, :as => :text
-    .form-actions
-      = f.button :submit, "Send", {class: 'btn btn-primary'}
-
+= simple_form_for(@message, :html => {class: 'form-horizontal'}) do |f|
+  .form-inputs
+    = f.error :base
+    = f.error_notification
+    = f.input :from
+    = f.input :to
+    = f.input :subject
+    = f.input :body, :as => :text, input_html: {rows: 5}
+  .form-actions
+    = f.button :submit, "Send", {class: 'btn btn-primary'}
+    = link_to 'Cancel', settings_path, class: 'btn'

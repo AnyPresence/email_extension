@@ -1,27 +1,39 @@
-.text-info
-  %h3 Email Extension Settings
-  %h3 Messages
+%ul.breadcrumb
+  %li
+    = link_to 'Home', main_app.admin_root_path
+    %span.divider /
+  %li
+    = link_to 'Extensions', main_app.admin_extensions_path
+    %span.divider /
+  %li.active Email Notifier
 
-%br
+.alert.alert-info
+  %h1 Email Notifier
+  %p Manage the email extension.
 
-%h3= link_to "Send Email", new_message_path
-.ap-text-center
-  = paginate @messages
-%table.table.table-striped
-  %tbody
-    %tr 
-      %th time
-      %th from
-      %th to
-      %th subject
-      %th message
+%hr
+
+= link_to new_message_path, class: 'btn btn-large btn-primary' do
+  Send Email
+  %i.icon-circle-arrow-right
+
+%hr
+
+= paginate @messages
+- if @messages.size == 0
+  .alert No email messages yet.
+- else
+  %table.table.table-striped
+    %thead
+      %tr
+        %th From
+        %th To
+        %th Subject
+        %th Time
+    %tbody
       - @messages.each do |message|
         %tr
-          %td= message.updated_at
-          %td= message.from
-          %td= message.to
+          %td.ap-mono= message.from
+          %td.ap-mono= message.to
           %td= message.subject
-          %td= message.body
-
-
-
+          %td.ap-mono= message.updated_at
