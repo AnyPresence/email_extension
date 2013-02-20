@@ -1,0 +1,45 @@
+{
+  "type": "ServiceInstance::CustomComponent",
+  "name": "Email Notifier",
+  "mount_endpoint": "/email_extension",
+  "model_configuration": {
+    "included_module": "AP::EmailExtension::Email",
+    "fire_method": "email_perform",
+    "parameters": ["required_configuration"],
+    "lifecyle_hooks": {
+      "email_perform": ["after_save", "after_create", "after_update", "after_destroy"]
+    },
+    "required_configuration": {
+      "sendgrid_username": {
+        "type": "String",
+        "description": "Sendgrid username.",
+        "sensitive": true
+      },
+      "sendgrid_password": {
+        "type": "String",
+        "description": "Sendgrid password.",
+        "sensitive": true,
+        "mask": true
+      }
+    },
+    "object_definition_level_configuration": {
+      "to_address": {
+        "type": "String",
+        "description": "Address to send email to."
+      },
+      "from_address": {
+        "type": "String",
+        "description": "Address to show in 'from' field."
+      },
+      "subject": {
+        "type": "String",
+        "description": "The template for the subject line..."
+      },
+      "outgoing_message_format": {
+        "type": "String",
+        "description": "The template for the email message...",
+        "format": "Text"
+      }
+    }
+  }
+}
